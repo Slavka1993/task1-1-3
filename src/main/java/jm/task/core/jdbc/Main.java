@@ -7,7 +7,7 @@ import jm.task.core.jdbc.util.Util;
 public class Main {
 
     public static void main(String[] args) {
-        UserDao userDao = new UserDaoJDBCImpl("User");
+        UserDao userDao = new UserDaoJDBCImpl();
         if (Util.getConnection() != null) {
             System.out.println("Соединение установлено!!!");
         }

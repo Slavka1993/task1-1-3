@@ -8,6 +8,7 @@ public class Util {
     private final static String URL = "jdbc:mysql://localhost:3306/preproject";
     private final static String USERNAME = "root";
     private final static String PASSWORD = "root";
+    public static final String TABLE_NAME = "user";
 
     public static Connection getConnection() {
         Connection connection = null;
