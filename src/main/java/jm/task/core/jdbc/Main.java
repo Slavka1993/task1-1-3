@@ -8,7 +8,8 @@ import jm.task.core.jdbc.util.Util;
 
 
 public class Main {
-    UserService userService = new UserServiceImpl();
+
+
 
 
 
