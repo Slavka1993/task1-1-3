@@ -74,6 +74,7 @@ public class UserDaoJDBCImpl implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         String getAll = "SELECT testName, testLastName, testAge FROM " + Util.TABLE_NAME;
