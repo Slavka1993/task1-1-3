@@ -1,5 +1,6 @@
 package jm.task.core.jdbc.dao;
 import jm.task.core.jdbc.model.User;
+import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.util.Util;
 import java.sql.*;
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class UserDaoJDBCImpl implements UserDao {
 
     // создание таблицы
     public void createUsersTable() {
+
+        String dropIfExists = "DROP TABLE IF EXISTS " + Util.TABLE_NAME;
         String create = "CREATE TABLE " + Util.TABLE_NAME + "("
                 + "id BIGINT PRIMARY KEY AUTO_INCREMENT,"
                 + "testName VARCHAR(30) NOT NULL,"
@@ -29,7 +32,9 @@ public class UserDaoJDBCImpl implements UserDao {
 
         try (Connection connection = Util.getConnection();
              Statement statement = connection.createStatement()) {
+            statement.executeUpdate(dropIfExists);
             statement.executeUpdate(create);
+
             System.out.println("Таблица '" + Util.TABLE_NAME + "' успешно создана!");
         } catch (SQLException e) {
             System.err.println("Ошибка при создании таблицы: " + e.getMessage());
