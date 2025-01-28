@@ -23,7 +23,7 @@ public class UserDaoJDBCImpl implements UserDao {
     // создание таблицы
     public void createUsersTable() {
 
-        String dropIfExists = "DROP TABLE IF EXISTS " + Util.TABLE_NAME;
+        String dropIfExists = drop;
         String create = "CREATE TABLE " + Util.TABLE_NAME + "("
                 + "id BIGINT PRIMARY KEY AUTO_INCREMENT,"
                 + "testName VARCHAR(30) NOT NULL,"
@@ -100,7 +100,10 @@ public class UserDaoJDBCImpl implements UserDao {
             System.err.println("Ошибка при получении пользователей: " + e.getMessage());
             e.printStackTrace();
         }
-        System.out.println("Получены пользователи: " + users);
+        System.out.println("Получены пользователи:");
+        for (User s: users) {
+            System.out.println(s);
+        }
         return users;
     }
 
