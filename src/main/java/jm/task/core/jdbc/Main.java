@@ -15,11 +15,11 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        UserDao userDao = new UserDaoJDBCImpl();
-        UserService userService = new UserServiceImpl(userDao);
-
-//        UserDao userDao = new UserDaoHibernateImpl();
+//        UserDao userDao = new UserDaoJDBCImpl();
 //        UserService userService = new UserServiceImpl(userDao);
+
+        UserDao userDao = new UserDaoHibernateImpl();
+        UserService userService = new UserServiceImpl(userDao);
 
         userService.createUsersTable();
 
