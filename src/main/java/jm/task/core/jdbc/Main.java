@@ -22,17 +22,17 @@ public class Main {
 //        UserService userService = new UserServiceImpl(userDao);
 
         userService.createUsersTable();
+
         userService.saveUser("Вячеслав", "Черенков", (byte) 31);
         userService.saveUser("Николай", "Иванов", (byte) 28);
         userService.saveUser("Иван", "Козлов", (byte) 25);
         userService.saveUser("Владимир", "Удалов", (byte) 31);
 
         userService.getAllUsers();
+
         userService.removeUserById(1);
         userService.createUsersTable();
         userService.dropUsersTable();
-
-
     }
 
 

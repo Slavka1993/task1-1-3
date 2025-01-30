@@ -1,7 +1,8 @@
 package jm.task.core.jdbc.dao;
+
 import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.util.Util;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -101,7 +102,7 @@ public class UserDaoJDBCImpl implements UserDao {
             e.printStackTrace();
         }
         System.out.println("Получены пользователи:");
-        for (User s: users) {
+        for (User s : users) {
             System.out.println(s);
         }
         return users;
